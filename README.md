@@ -1,6 +1,10 @@
 # Electron avec React et Electron-Window-Manager
 POC de ce qu'on peut faire avec electron + react + electron-window-manager
 
+> **Historical proof of concept**
+>
+> This repository is preserved as a historical Electron/React window-management experiment. The example environment file contains only local development behavior; keep `.env` untracked and never place credentials in it. Current dependency or build compatibility is not claimed.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
