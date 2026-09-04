@@ -1,6 +1,18 @@
 # Electron avec React et Electron-Window-Manager
 POC de ce qu'on peut faire avec electron + react + electron-window-manager
 
+> **Historical proof of concept**
+>
+> This repository is preserved as a historical Electron/React window-management experiment. The example environment file contains only local development behavior; keep `.env` untracked and never place credentials in it. Current dependency or build compatibility is not claimed.
+
+To apply the documented local development behavior, copy the example to the untracked file that Create React App loads:
+
+```bash
+cp .env.example .env
+```
+
+Keep the copied `.env` local and do not commit it.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -959,7 +971,7 @@ REACT_APP_SECRET_CODE=abcdef
 ```
 >Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid [accidentally exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
 
-`.env` files **should be** checked into source control (with the exclusion of `.env*.local`).
+For this historical repository, `.env` is deliberately untracked. Copy `.env.example` to `.env` for local use, and do not commit the copy.
 
 #### What other `.env` files can be used?
 
