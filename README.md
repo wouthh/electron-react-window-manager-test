@@ -16,8 +16,7 @@ Keep the copied `.env` local and do not commit it.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+The guide below is inherited from Create React App and describes the historical `react-scripts` 1.1.5 toolchain used here. Its external service instructions and links may be obsolete; they do not establish current compatibility. See the [versioned upstream guide](https://github.com/react/create-react-app/blob/v1.1.5/packages/react-scripts/template/README.md) for the original context.
 
 ## Table of Contents
 
@@ -1883,7 +1882,7 @@ runtime caching strategy for those requests, you can [`eject`](#npm-run-eject)
 and then configure the
 [`runtimeCaching`](https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject)
 option in the `SWPrecacheWebpackPlugin` section of
-[`webpack.config.prod.js`](../config/webpack.config.prod.js).
+[`webpack.config.prod.js`](https://github.com/react/create-react-app/blob/v1.1.5/packages/react-scripts/config/webpack.config.prod.js).
 
 ### Progressive Web App Metadata
 
@@ -2018,7 +2017,7 @@ service worker navigation routing can be configured or disabled by
 [`eject`ing](#npm-run-eject) and then modifying the
 [`navigateFallback`](https://github.com/GoogleChrome/sw-precache#navigatefallback-string)
 and [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)
-options of the `SWPreachePlugin` [configuration](../config/webpack.config.prod.js).
+options of the `SWPreachePlugin` [configuration](https://github.com/react/create-react-app/blob/v1.1.5/packages/react-scripts/config/webpack.config.prod.js).
 
 When users install your app to the homescreen of their device the default configuration will make a shortcut to `/index.html`. This may not work for client-side routers which expect the app to be served from `/`. Edit the web app manifest at [`public/manifest.json`](public/manifest.json) and change `start_url` to match the required URL scheme, for example:
 
