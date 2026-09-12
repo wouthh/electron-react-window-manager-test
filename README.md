@@ -231,7 +231,7 @@ In addition to [ES6](https://github.com/lukehoban/es6features) syntax features, 
 * [Object Rest/Spread Properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (stage 3 proposal).
 * [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 3 proposal)
 * [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal).
-* [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) and [Flow](https://flowtype.org/) syntax.
+* [JSX](https://legacy.reactjs.org/docs/introducing-jsx.html) and [Flow](https://flow.org/) syntax.
 
 Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
 
@@ -282,9 +282,9 @@ Visual Studio Code and WebStorm support debugging out of the box with Create Rea
 
 ### Visual Studio Code
 
-You would need to have the latest version of [VS Code](https://code.visualstudio.com) and VS Code [Chrome Debugger Extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) installed.
+The original guide used the separate Chrome Debugger extension. Current VS Code includes [built-in browser debugging for Chrome and Edge](https://code.visualstudio.com/docs/nodejs/browser-debugging).
 
-Then add the block below to your `launch.json` file and put it inside the `.vscode` folder in your app’s root directory.
+The historical `launch.json` example below belongs in the `.vscode` folder in the app’s root directory. It has not been verified with current VS Code.
 
 ```json
 {
@@ -305,7 +305,7 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
 
 Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
 
-Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
+Having problems with VS Code browser debugging? Please see the [current VS Code browser-debugging documentation](https://code.visualstudio.com/docs/nodejs/browser-debugging).
 
 ### WebStorm
 
@@ -398,7 +398,7 @@ This works for any library, not just `react-router`.
 ## Importing a Component
 
 This project setup supports ES6 modules thanks to Babel.<br>
-While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](http://exploringjs.com/es6/ch_modules.html) instead.
+While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) instead.
 
 For example:
 
@@ -441,14 +441,14 @@ Named exports are useful for utility modules that export several functions. A mo
 Learn more about ES6 modules:
 
 * [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
-* [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
+* [JavaScript modules (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 * [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
 
 ## Code Splitting
 
 Instead of downloading the entire app before users can use it, code splitting allows you to split your code into small chunks which you can then load on demand.
 
-This project setup supports code splitting via [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand). Its [proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3. The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
+This project setup supports code splitting via [dynamic `import()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import). Its [proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3. The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
 
 Here is an example:
 
@@ -756,7 +756,7 @@ The `public` folder is useful as a workaround for a number of less common cases:
 
 * You need a file with a specific name in the build output, such as [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest).
 * You have thousands of images and need to dynamically reference their paths.
-* You want to include a small script like [`pace.js`](http://github.hubspot.com/pace/docs/welcome/) outside of the bundled code.
+* You want to include a small script like [`pace.js`](https://codebyzach.github.io/pace/docs/) outside of the bundled code.
 * Some library may be incompatible with Webpack and you have no other option but to include it as a `<script>` tag.
 
 Note that if you add a `<script>` that declares global variables, you also need to read the next section on using them.
@@ -823,20 +823,20 @@ Here is an example of adding a [customized Bootstrap](https://medium.com/@tacoma
 
 Flow is a static type checker that helps you write code with fewer bugs. Check out this [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb) if you are new to this concept.
 
-Recent versions of [Flow](http://flowtype.org/) work with Create React App projects out of the box.
+The steps below preserve the original [Flow](https://flow.org/) setup described by the inherited Create React App guide. Compatibility with current Flow releases is unverified.
 
 To add Flow to a Create React App project, follow these steps:
 
 1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
 2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
-3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
+3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flow.org/en/docs/config/) in the root directory.
 4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
 
 Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
 You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
 In the future we plan to integrate it into Create React App even more closely.
 
-To learn more about Flow, check out [its documentation](https://flowtype.org/).
+To learn more about Flow, check out [its documentation](https://flow.org/).
 
 ## Adding a Router
 
@@ -1745,7 +1745,6 @@ After that, follow the instructions on the screen.
 
 Learn more about React Storybook:
 
-* Screencast: [Getting Started with React Storybook](https://egghead.io/lessons/react-getting-started-with-react-storybook)
 * [GitHub Repo](https://github.com/storybooks/storybook)
 * [Documentation](https://storybook.js.org/basics/introduction/)
 * [Snapshot Testing UI](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with Storybook + addon/storyshot
@@ -1866,7 +1865,7 @@ will temporarily disable the service worker and retrieve all assets from the
 network.
 
 1. Users aren't always familiar with offline-first web apps. It can be useful to
-[let the user know](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux#inform_the_user_when_the_app_is_ready_for_offline_consumption)
+[let the user know](https://web.dev/articles/offline-ux-design-guidelines)
 when the service worker has finished populating your caches (showing a "This web
 app works offline!" message) and also let them know when the service worker has
 fetched the latest updates that will be available the next time they load the
@@ -2322,7 +2321,7 @@ Now offers a zero-configuration single-command deployment. You can use `now` to 
 
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
-Details are available in [this article.](https://zeit.co/blog/unlimited-static)
+These steps describe the historical `now` CLI; current deployment compatibility is unverified.
 
 ### [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/)
 
