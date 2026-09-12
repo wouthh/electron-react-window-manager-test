@@ -305,7 +305,7 @@ The historical `launch.json` example below belongs in the `.vscode` folder in th
 
 Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
 
-Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
+Having problems with VS Code browser debugging? Please see the [current VS Code browser-debugging documentation](https://code.visualstudio.com/docs/nodejs/browser-debugging).
 
 ### WebStorm
 
